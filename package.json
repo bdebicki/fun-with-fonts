@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.5.10"
   }
 }
