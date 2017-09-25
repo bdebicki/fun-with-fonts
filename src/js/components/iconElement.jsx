@@ -6,6 +6,7 @@ export default class IconElement extends React.Component {
   render() {
     const classes = classNames(
       'iconsList__element',
+      'iconFull',
       `iconFull--${this.props.iconShape}`
     );
 
