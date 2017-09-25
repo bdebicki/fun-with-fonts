@@ -1,0 +1,100 @@
+@fontFamily-base: ~'Arial, sans-serif';
+
+@fontSize-base: 14px;
+@fontSize-textSmall: 12px;
+@fontSize-textMedium: 16px;
+@fontSize-headline1: 42px;
+@fontSize-headline2: 30px;
+@fontSize-headline3: 24px;
+@fontSize-headline4: 20px;
+@fontSize-headline5: 18px;
+@fontSize-headline6: 16px;
+@fontSize-headline7: 14px;
+@fontSize-headline8: 12px;
+
+@lineHeight-base: 18px;
+@lineHeight-textSmall: 16px;
+@lineHeight-textMedium: 32px;
+@lineHeight-headline1: 50px;
+@lineHeight-headline2: 36px;
+@lineHeight-headline3: 32px;
+@lineHeight-headline4: 28px;
+@lineHeight-headline5: 24px;
+@lineHeight-headline6: 20px;
+@lineHeight-headline7: 18px;
+@lineHeight-headline8: 14px;
+
+@textColor-base: @gray-base;
+@textColor-headline: @gray-base;
+
+.text-base(@color: @textColor-base) {
+	color: @color;
+	font-size: @fontSize-base;
+	line-height: @lineHeight-base;
+}
+.text-small() {
+	font-size: @fontSize-textSmall;
+	line-height: @lineHeight-textSmall;
+}
+.text-medium() {
+	font-size: @fontSize-textMedium;
+	line-height: @lineHeight-textMedium;
+}
+
+.headline-1(@color: @textColor-headline) {
+	color: @color;
+	font-size: @fontSize-headline1;
+	line-height: @lineHeight-headline1;
+	font-weight: 800;
+}
+.headline-2(@color: @blue-base) {
+	color: @color;
+	font-size: @fontSize-headline2;
+	line-height: @lineHeight-headline2;
+	font-weight: 300;
+}
+.headline-3(@color: @textColor-headline) {
+	color: @color;
+	font-size: @fontSize-headline3;
+	line-height: @lineHeight-headline3;
+	font-weight: bold;
+}
+.headline-4(@color: @textColor-headline) {
+	color: @color;
+	font-size: @fontSize-headline4;
+	line-height: @lineHeight-headline4;
+}
+.headline-5(@color: @textColor-headline, @weight: false) {
+	color: @color;
+	font-size: @fontSize-headline5;
+	line-height: @lineHeight-headline5;
+
+	& when (@weight = bold) {
+		font-weight: bold;
+	}
+	& when (isnumber(@weight)) {
+		font-weight: @weight;
+	}
+}
+.headline-6(@color: @textColor-headline) {
+	color: @color;
+	font-size: @fontSize-headline6;
+	line-height: @lineHeight-headline6;
+}
+.headline-7(@color: @textColor-headline, @weight: bold) {
+	color: @color;
+	font-size: @fontSize-headline7;
+	line-height: @lineHeight-headline7;
+
+	& when (@weight = bold) {
+		font-weight: bold;
+	}
+}
+.headline-8(@color: @silver-darken25) {
+	color: @color;
+	font-size: @fontSize-headline8;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: @lineHeight-headline8;
+	text-transform: uppercase;
+}
