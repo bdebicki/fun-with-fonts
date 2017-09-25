@@ -1,6 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const config = {
   entry: {
@@ -10,8 +12,8 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: '[name].js',
-    publicPath: '/public'
+    filename: 'js/[name].js',
+    publicPath: '/'
   },
   resolve: {
     modules: [__dirname, 'node_modules'],
@@ -34,7 +36,7 @@ const config = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: '[name].css',
+      filename: 'css/[name].css',
     }),
     new HtmlWebpackPlugin({
       chunks: ['full'],
@@ -51,6 +53,13 @@ const config = {
       filename:'two-packages.html',
       template: 'src/templates/two-packages.html'
     }),
+    new CopyWebpackPlugin([
+      { from: 'src/icons/*.woff', to: 'icons/[name].woff' },
+      { from: 'src/icons/*.woff2', to: 'icons/[name].woff2' }
+    ]),
+    new WriteFilePlugin({
+      test: /\.(woff|woff2)$/,
+    })
   ]
 };
 
