@@ -12,7 +12,7 @@ export default class App extends React.Component {
       <div className="reactWrapper">
         <h5 className="title">fun with icon fonts</h5>
         <h1 className="headline">icons compiled in one font file</h1>
-        <ul className="iconsList iconsList--fullPackage">
+        <ul className="iconsList">
           {FULL_ICONS.map((item, index) => {
             return(
               <IconElement iconShape={item} key={index} />
