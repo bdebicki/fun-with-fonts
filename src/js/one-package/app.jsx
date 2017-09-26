@@ -4,7 +4,7 @@ import IconElement from '../components/iconElement';
 
 import { ONE_ICONS } from './iconsList.js';
 
-import '../../less/views/full-package.less';
+import '../../less/views/one-package.less';
 
 export default class App extends React.Component {
   render() {
