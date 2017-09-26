@@ -15,7 +15,7 @@ export default class App extends React.Component {
         <ul className="iconsList iconsList--fullPackage">
           {ONE_ICONS.map((item, index) => {
             return(
-              <IconElement iconShape={item} key={index} />
+              <IconElement iconShape={item} shapeCategory='general' key={index} />
             )
           })}
         </ul>

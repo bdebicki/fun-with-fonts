@@ -3,11 +3,25 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 export default class IconElement extends React.Component {
+  shapeCategory() {
+    switch(this.props.shapeCategory) {
+      case 'general':
+        return 'iconGeneral';
+        break;
+      case 'editor':
+        return 'iconEditor';
+        break;
+      default:
+        return 'iconFull';
+        break;
+    }
+  }
+
   render() {
     const classes = classNames(
       'iconsList__element',
-      'iconFull',
-      `iconFull--${this.props.iconShape}`
+      this.shapeCategory(),
+      `${this.shapeCategory()}--${this.props.iconShape}`
     );
 
     return (
@@ -19,5 +33,10 @@ export default class IconElement extends React.Component {
 }
 
 IconElement.propTypes = {
+  shapeCategory: PropTypes.string.isRequired,
   iconShape: PropTypes.string.isRequired,
+};
+
+IconElement.defaultProps = {
+  shapeCategory: 'full'
 };
